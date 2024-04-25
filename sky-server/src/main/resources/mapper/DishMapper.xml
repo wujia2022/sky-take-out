@@ -14,7 +14,7 @@
             <if test="name != null">
                 and d.name like concat('%',#{name},'%')
             </if>
-            <if test="category_id != null">
+            <if test="categoryId != null">
                 and d.category_id = #{categoryId}
             </if>
             <if test="status != null">
@@ -22,4 +22,10 @@
             </if>
         </where>
     </select>
+    <delete id="deleteByIds">
+        delete from dish where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
