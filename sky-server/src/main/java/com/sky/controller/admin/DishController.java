@@ -22,7 +22,7 @@ import java.util.List;
  * @Create: 2024/4/24 - 22:51
  * @Version: v1.0
  */
-@RestController
+@RestController("AdminDishController")
 @RequestMapping("admin/dish")
 @Api(tags = "菜品相关接口")
 public class DishController {
