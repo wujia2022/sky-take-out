@@ -327,7 +327,7 @@ public class OrderServiceImpl implements OrderService {
         Orders orders = new Orders();
         orders.setId(ordersDB.getId());
         orders.setRejectionReason(ordersRejectionDTO.getRejectionReason());
-        orders.setStatus(Orders.REFUND);
+        orders.setStatus(Orders.CANCELLED);
         orders.setCancelTime(LocalDateTime.now());
         orders.setPayStatus(Orders.REFUND);
         orderMapper.update(orders);

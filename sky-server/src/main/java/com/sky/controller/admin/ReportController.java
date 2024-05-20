@@ -41,7 +41,7 @@ public class ReportController {
      */
     @GetMapping("/turnoverStatistics")
     @ApiOperation("营业额统计")
-    public Result<TurnoverReportVO> turnoverStatistics(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin,@DateTimeFormat(pattern = "yyyy-MM--dd")LocalDate end){
+    public Result<TurnoverReportVO> turnoverStatistics(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin,@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate end){
         return Result.success(reportService.getTurnoverStatistics(begin,end));
     }
     /**
@@ -52,7 +52,7 @@ public class ReportController {
      */
     @GetMapping("/userStatistics")
     @ApiOperation("用户统计")
-    public Result<UserReportVO> userStatistics(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin, @DateTimeFormat(pattern = "yyyy-MM--dd")LocalDate end){
+    public Result<UserReportVO> userStatistics(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin, @DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate end){
         return Result.success(reportService.getUserStatistics(begin,end));
     }
     /**
@@ -63,7 +63,7 @@ public class ReportController {
      */
     @GetMapping("/ordersStatistics")
     @ApiOperation("订单统计")
-    public Result<OrderReportVO> ordersStatistics(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin, @DateTimeFormat(pattern = "yyyy-MM--dd")LocalDate end){
+    public Result<OrderReportVO> ordersStatistics(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin, @DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate end){
         return Result.success(reportService.getOrderStatistics(begin,end));
     }
     /**
@@ -74,7 +74,7 @@ public class ReportController {
      */
     @GetMapping("/top10")
     @ApiOperation("销量排名Top10")
-    public Result<SalesTop10ReportVO> top10(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin, @DateTimeFormat(pattern = "yyyy-MM--dd")LocalDate end){
+    public Result<SalesTop10ReportVO> top10(@DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate begin, @DateTimeFormat(pattern = "yyyy-MM-dd")LocalDate end){
         return Result.success(reportService.getSalesTop10(begin,end));
     }
 

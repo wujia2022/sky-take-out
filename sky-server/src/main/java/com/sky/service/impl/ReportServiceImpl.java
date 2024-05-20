@@ -66,8 +66,8 @@ public class ReportServiceImpl implements ReportService {
         List<Double> turnoverList = new ArrayList<>();
         for (LocalDate date : dateList) {
             // 查询date日期对应的营业额数据，营业额是指：状态为“已完成”的订单金额合并
-            LocalDateTime beginTime = LocalDateTime.of(begin, LocalTime.MIN);
-            LocalDateTime endTime = LocalDateTime.of(end, LocalTime.MAX);
+            LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
+            LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
             Map map = new HashMap();
             map.put("begin",beginTime);
             map.put("end",endTime);
@@ -104,8 +104,8 @@ public class ReportServiceImpl implements ReportService {
         // 存放每天的总用户数量
         List<Integer> totalUserList = new ArrayList<>();
         for (LocalDate date : dateList) {
-            LocalDateTime beginTime = LocalDateTime.of(begin, LocalTime.MIN);
-            LocalDateTime endTime = LocalDateTime.of(end, LocalTime.MAX);
+            LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
+            LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
             Map map = new HashMap();
             map.put("end",endTime);
             // 总用户数据
@@ -144,8 +144,8 @@ public class ReportServiceImpl implements ReportService {
         // 存放每天的有效订单数
         List<Integer> validOrderCountList = new ArrayList<>();
         for (LocalDate date : dateList) {
-            LocalDateTime beginTime = LocalDateTime.of(begin, LocalTime.MIN);
-            LocalDateTime endTime = LocalDateTime.of(end, LocalTime.MAX);
+            LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
+            LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
             // 查询每天的订单总数
             Integer orderCount = getOrderCount(beginTime,endTime,null);
             // 查询每天的有效订单数
